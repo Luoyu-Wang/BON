@@ -251,17 +251,6 @@ labels3 = [labels1, labels2];
 
 combine_and_plot_networks('TimeSignalParametersDK10StructureCoregisterEstwrite', 'TimeSignalParametersOrgansBodyImgSegmentImerodeCoregisterEstwrite9', 'TimeSignalDK10Organs9Merge', labels3, 1:23, 24:51);
 
-% Plot original NBS sub-networks
-mat_plot_network('Edge05_Pos_Comnet_P=0.0158984.txt', 'Edge05_Pos_Comnet_P=0.0158984', labels3, 12, jet(length(labels3)));
-mat_plot_network('Edge01_Pos_Comnet_P=0.0168983.txt', 'Edge01_Pos_Comnet_P=0.0168983', labels3, 12, jet(length(labels3)));
-
-% TNet Thresholding for DK10
-mat = load('Edge05_TNet.txt');
-th = load('Edge05_TThrd.txt');
-mat(abs(mat) < th) = 0;
-save('Edge05_TNet_sig.txt','mat', '-ascii');
-mat_plot_network('Edge05_TNet_sig.txt', 'Edge05_TNet_sig', labels3, 12, jet(length(labels3)));
-
 
 %% ========================================================================
 %  Helper Functions (Local functions to streamline repetitive logic)
